@@ -90,7 +90,7 @@ public class MustFulfilInCollectionTest {
             return input.getMethodPath();
           }
         })
-        .toImmutableList();
+        .toList();
 
     assertThat(methodPaths, hasItems("anotherBeans[0].value", "anotherBeans[1].value"));
   }

@@ -43,7 +43,7 @@ public class MustFulfilTest {
             return input.getMethodPath();
           }
         })
-        .toImmutableList();
+        .toList();
 
     assertThat(methodPaths, hasItems("anotherBean.aStringValue"));
   }
