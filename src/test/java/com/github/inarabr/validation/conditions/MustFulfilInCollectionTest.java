@@ -28,7 +28,7 @@ public class MustFulfilInCollectionTest {
         .someString("some text in the bean")
         .addAnotherBean(new AnotherBean().value("another bean value"));
 
-    FieldCondition<Class> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
+    FieldCondition<String> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
     FieldCondition validation = validation(field(BeanWithCollection.class).getAnotherBeans(), inCollection(validationForAnotherBean));
 
     assertThat(validation.isValidateObject(obj), is(true));
@@ -40,7 +40,7 @@ public class MustFulfilInCollectionTest {
         .someString("some text in the bean")
         .addAnotherBean(new AnotherBean().value("value that does not exist in the validation"));
 
-    FieldCondition<Class> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
+    FieldCondition<String> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
     FieldCondition validation = validation(field(BeanWithCollection.class).getAnotherBeans(), inCollection(validationForAnotherBean));
 
     assertThat(validation.isValidateObject(obj), is(false));
@@ -52,7 +52,7 @@ public class MustFulfilInCollectionTest {
         .someString("some text in the bean")
         .addAnotherBean(new AnotherBean().value("value that does not exist in the validation"));
 
-    FieldCondition<Class> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
+    FieldCondition<String> validationForAnotherBean = validation(field(AnotherBean.class).getValue(), hasValue("another bean value"));
     FieldCondition validation = validation(field(BeanWithList.class).getAnotherBeans(), inCollection(validationForAnotherBean));
 
     assertThat(validation.isValidateObject(obj), is(false));

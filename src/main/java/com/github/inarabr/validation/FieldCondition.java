@@ -18,15 +18,15 @@ import java.util.Set;
 
 import static java.util.Collections.unmodifiableList;
 
-public class FieldCondition<K extends Class> implements Validation {
+public class FieldCondition<T> implements Validation {
 
-  private final K entryClass;
+  private final Class<T> entryClass;
   private final List<Method> stack;
   private final MethodInterceptor interceptor;
-  private Condition condition;
+  private Condition<T> condition;
   private static final ThreadLocal<FieldCondition> PROGRESS = new ThreadLocal<>();
 
-  private FieldCondition(K entryClass) {
+  private FieldCondition(Class<T> entryClass) {
     if (PROGRESS.get() != null) {
       PROGRESS.remove();
       throw new IllegalStateException("There is already a unfinished validation that isn't used yet!");
@@ -39,13 +39,13 @@ public class FieldCondition<K extends Class> implements Validation {
 
   @SuppressWarnings("unchecked")
   public static <T> T field(Class<T> klasse) {
-    FieldCondition<Class<T>> felt = new FieldCondition<>(klasse);
+    FieldCondition<T> felt = new FieldCondition<>(klasse);
     return (T) Enhancer.create(klasse, felt.interceptor);
   }
 
   @SuppressWarnings({"unchecked", "unused"})
-  public static <T, K extends Class> FieldCondition<K> validation(T field, Condition<T> condition) {
-    FieldCondition<K> fieldCondition = PROGRESS.get();
+  public static <T> FieldCondition<T> validation(T field, Condition<T> condition) {
+    FieldCondition<T> fieldCondition = PROGRESS.get();
     if (fieldCondition != null) {
       PROGRESS.remove();
       fieldCondition.condition = condition;
@@ -57,7 +57,7 @@ public class FieldCondition<K extends Class> implements Validation {
     return condition;
   }
 
-  public K getEntryClass() {
+  public Class<T> getEntryClass() {
     return entryClass;
   }
 

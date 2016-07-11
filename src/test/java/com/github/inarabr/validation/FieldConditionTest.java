@@ -66,13 +66,13 @@ public class FieldConditionTest {
 
   @Test
   public void shouldReturnFalseWhenAFiledInTheHierarchicallyDoesNotHaveAValue() {
-    FieldCondition fieldCondition = validation(field(SomeBean.class).getAnotherBean().getValue(), hasOneOfTheValues("foo"));
+    FieldCondition<String> fieldCondition = validation(field(SomeBean.class).getAnotherBean().getValue(), hasOneOfTheValues("foo"));
     assertThat(fieldCondition.isValidateObject(new SomeBean()), is(false));
   }
 
   @Test
   public void shouldEvaluateAStackPathOfTheMethodsThatIsCalled() {
-    FieldCondition fieldCondition = validation(field(SomeBean.class).getAnotherBean().getValue(), null);
+    FieldCondition<String> fieldCondition = validation(field(SomeBean.class).getAnotherBean().getValue(), null);
 
     assertThat(fieldCondition.getStackPath(), is("anotherBean.value"));
   }
