@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.Set;
 
-import static com.github.inarabr.conditions.ExistsCondition.mustHaveValue;
+import static com.github.inarabr.conditions.Exists.mustHaveValue;
 import static com.github.inarabr.validation.FieldCondition.field;
 import static com.github.inarabr.validation.FieldCondition.validation;
 import static org.hamcrest.core.Is.is;

@@ -7,16 +7,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
-public class MustFulfilCondition<T> implements ValidationCondition<T>, Validation {
+public class MustFulfil<T> implements ValidationCondition<T>, Validation {
 
   private Validation validation;
 
-  private MustFulfilCondition(Validation validation) {
+  private MustFulfil(Validation validation) {
     this.validation = validation;
   }
 
-  public static MustFulfilCondition mustFulfil(Validation validation) {
-    return new MustFulfilCondition<>(validation);
+  public static MustFulfil mustFulfil(Validation validation) {
+    return new MustFulfil<>(validation);
   }
 
   @Override

@@ -3,22 +3,22 @@ package com.github.inarabr.conditions;
 import java.util.Collection;
 import java.util.Collections;
 
-public class ExistsCondition<T> implements ValidationCondition<T> {
+public class Exists<T> implements ValidationCondition<T> {
 
   private boolean mustHaveValue;
 
-  private static final ExistsCondition<?> HAS_VALUE_INSTANCE = new ExistsCondition<>(true);
-  private static final ExistsCondition<?> HAS_NOT_VALUE_INSTANCE = new ExistsCondition<>(false);
+  private static final Exists<?> HAS_VALUE_INSTANCE = new Exists<>(true);
+  private static final Exists<?> HAS_NOT_VALUE_INSTANCE = new Exists<>(false);
 
-  private ExistsCondition(boolean mustHaveValue) {
+  private Exists(boolean mustHaveValue) {
     this.mustHaveValue = mustHaveValue;
   }
 
-  public static ExistsCondition mustHaveValue() {
+  public static Exists mustHaveValue() {
     return HAS_VALUE_INSTANCE;
   }
 
-  public static ExistsCondition mustNotHaveValue() {
+  public static Exists mustNotHaveValue() {
     return HAS_NOT_VALUE_INSTANCE;
   }
 

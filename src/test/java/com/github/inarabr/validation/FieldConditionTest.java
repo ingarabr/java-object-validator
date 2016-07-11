@@ -2,18 +2,14 @@ package com.github.inarabr.validation;
 
 import com.github.inarabr.validation.testobjects.SomeBean;
 import com.google.common.base.Function;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsNot;
-import org.hamcrest.core.IsNull;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
 
-import static com.github.inarabr.conditions.ExistsCondition.mustHaveValue;
-import static com.github.inarabr.conditions.ExistsCondition.mustNotHaveValue;
-import static com.github.inarabr.conditions.HasValueCondition.hasOneOfTheValues;
+import static com.github.inarabr.conditions.Exists.mustHaveValue;
+import static com.github.inarabr.conditions.Exists.mustNotHaveValue;
+import static com.github.inarabr.conditions.HasValue.hasOneOfTheValues;
 import static com.github.inarabr.validation.FieldCondition.field;
 import static com.github.inarabr.validation.FieldCondition.validation;
 import static com.google.common.collect.Iterables.transform;

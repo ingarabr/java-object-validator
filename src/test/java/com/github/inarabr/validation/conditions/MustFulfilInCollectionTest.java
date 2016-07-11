@@ -12,15 +12,15 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Set;
 
-import static com.github.inarabr.conditions.HasValueCondition.hasValue;
-import static com.github.inarabr.conditions.MustFulfilInCollectionCondition.inCollection;
+import static com.github.inarabr.conditions.HasValue.hasValue;
+import static com.github.inarabr.conditions.MustFulfilInCollection.inCollection;
 import static com.github.inarabr.validation.FieldCondition.field;
 import static com.github.inarabr.validation.FieldCondition.validation;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class MustFulfilInCollectionConditionTest {
+public class MustFulfilInCollectionTest {
 
   @Test
   public void shouldValidateObjectInCollectionWithSuccess() {

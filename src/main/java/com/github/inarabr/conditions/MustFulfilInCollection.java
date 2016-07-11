@@ -8,16 +8,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public final class MustFulfilInCollectionCondition<T> implements ValidationCondition<Collection<T>>, Validation {
+public final class MustFulfilInCollection<T> implements ValidationCondition<Collection<T>>, Validation {
 
   private final Validation validation;
 
-  public MustFulfilInCollectionCondition(Validation validation) {
+  public MustFulfilInCollection(Validation validation) {
     this.validation = validation;
   }
 
-  public static MustFulfilInCollectionCondition inCollection(Validation validation) {
-    return new MustFulfilInCollectionCondition(validation);
+  public static MustFulfilInCollection inCollection(Validation validation) {
+    return new MustFulfilInCollection(validation);
   }
 
   @Override

@@ -11,16 +11,16 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Set;
 
-import static com.github.inarabr.conditions.ExistsCondition.mustNotHaveValue;
-import static com.github.inarabr.conditions.HasValueCondition.hasOneOfTheValues;
-import static com.github.inarabr.conditions.MustFulfilCondition.mustFulfil;
+import static com.github.inarabr.conditions.Exists.mustNotHaveValue;
+import static com.github.inarabr.conditions.HasValue.hasOneOfTheValues;
+import static com.github.inarabr.conditions.MustFulfil.mustFulfil;
 import static com.github.inarabr.validation.AndValidation.and;
 import static com.github.inarabr.validation.FieldCondition.field;
 import static com.github.inarabr.validation.FieldCondition.validation;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
 import static org.junit.Assert.assertThat;
 
-public class MustFulfilConditionTest {
+public class MustFulfilTest {
 
   @Test
   public void shouldShowViolationsWithAbsoluteMethodPath() {

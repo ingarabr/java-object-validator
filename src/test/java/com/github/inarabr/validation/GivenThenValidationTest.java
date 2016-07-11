@@ -5,7 +5,7 @@ import com.github.inarabr.validation.testobjects.SomeBean;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.github.inarabr.conditions.HasValueCondition.hasValue;
+import static com.github.inarabr.conditions.HasValue.hasValue;
 import static com.github.inarabr.validation.FieldCondition.field;
 import static com.github.inarabr.validation.FieldCondition.validation;
 import static org.hamcrest.core.Is.is;

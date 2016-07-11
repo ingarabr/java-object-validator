@@ -7,23 +7,23 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class HasValueCondition<T> implements ValidationCondition<T> {
+public class HasValue<T> implements ValidationCondition<T> {
 
   private Set<T> validValues;
 
-  private HasValueCondition(Set<T> validValues) {
+  private HasValue(Set<T> validValues) {
     this.validValues = validValues;
   }
 
   @SafeVarargs
-  public static <T> HasValueCondition<T> hasOneOfTheValues(T valueOne, T... otherValues) {
+  public static <T> HasValue<T> hasOneOfTheValues(T valueOne, T... otherValues) {
     Set<T> values = new LinkedHashSet<>();
     values.add(valueOne);
     Collections.addAll(values, otherValues);
-    return new HasValueCondition<>(values);
+    return new HasValue<>(values);
   }
 
-  public static <T> HasValueCondition<T> hasValue(T value) {
+  public static <T> HasValue<T> hasValue(T value) {
     return hasOneOfTheValues(value);
   }
 
