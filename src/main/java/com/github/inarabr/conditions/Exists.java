@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Exists<T> implements ValidationCondition<T> {
 
-  private boolean mustHaveValue;
+  private final boolean mustHaveValue;
 
   private static final Exists<?> HAS_VALUE_INSTANCE = new Exists<>(true);
   private static final Exists<?> HAS_NOT_VALUE_INSTANCE = new Exists<>(false);

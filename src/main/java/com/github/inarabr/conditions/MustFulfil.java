@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class MustFulfil<T> implements ValidationCondition<T>, Validation {
 
-  private Validation validation;
+  private final Validation validation;
 
   private MustFulfil(Validation validation) {
     this.validation = validation;

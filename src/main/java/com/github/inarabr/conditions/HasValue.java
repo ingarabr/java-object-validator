@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class HasValue<T> implements ValidationCondition<T> {
 
-  private Set<T> validValues;
+  private final Set<T> validValues;
 
   private HasValue(Set<T> validValues) {
     this.validValues = validValues;
