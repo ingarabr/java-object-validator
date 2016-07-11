@@ -16,8 +16,8 @@ public class Violation {
     return this;
   }
 
-  public Violation methodPath(String metodePath) {
-    this.methodPath = metodePath;
+  public Violation methodPath(String methodPath) {
+    this.methodPath = methodPath;
     return this;
   }
 
