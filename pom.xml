@@ -4,7 +4,7 @@
 
   <groupId>com.github.ingarabr</groupId>
   <artifactId>validation</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Java Object Validator</name>
@@ -34,7 +34,7 @@
     <connection>scm:git:git://github.com/ingarabr/java-object-validator.git</connection>
     <developerConnection>scm:git:ssh://github.com/ingarabr/java-object-validator.git</developerConnection>
     <url>https://github.com/ingarabr/java-object-validator/tree/master</url>
-    <tag>validation-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
