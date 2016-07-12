@@ -8,6 +8,7 @@
   <packaging>jar</packaging>
 
   <name>Java Object Validator</name>
+  <url>https://github.com/ingarabr/java-object-validator</url>
   <description>Validate object structure and values by utilizing the java compiler for type checking</description>
 
   <properties>
