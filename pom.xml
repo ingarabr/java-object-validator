@@ -73,6 +73,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <useReleaseProfile>false</useReleaseProfile>
+            <releaseProfiles>release-ossrh</releaseProfiles>
+            <goals>deploy</goals>
+          </configuration>
           <version>2.5.3</version>
         </plugin>
           <plugin>
